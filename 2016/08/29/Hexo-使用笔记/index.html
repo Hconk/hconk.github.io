@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"notes.zyk.space","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="Hexo 使用笔记 Hexo是一个快速，简洁且高效的博客框架。Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。该文章仅用来做简单的记录，如需具体安装可以参考hexo 官方文档  安装 安装Hexo十分简单，需要先安装Node.js 和 Git 应用。如果已经安装这两个软件，只需使用npm即可完成Hexo的安装。1$ npm install -g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 使用笔记">
+<meta property="og:url" content="http://notes.zyk.space/2016/08/29/Hexo-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hconk&#39;s Blog">
+<meta property="og:description" content="Hexo 使用笔记 Hexo是一个快速，简洁且高效的博客框架。Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。该文章仅用来做简单的记录，如需具体安装可以参考hexo 官方文档  安装 安装Hexo十分简单，需要先安装Node.js 和 Git 应用。如果已经安装这两个软件，只需使用npm即可完成Hexo的安装。1$ npm install -g">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-08-29T10:03:43.000Z">
+<meta property="article:modified_time" content="2020-10-25T10:07:39.799Z">
+<meta property="article:author" content="Hconk">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://notes.zyk.space/2016/08/29/Hexo-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hexo 使用笔记 | Hconk's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hconk's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">Hexo 使用笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo%E5%8D%81%E5%88%86%E7%AE%80%E5%8D%95%EF%BC%8C%E9%9C%80%E8%A6%81%E5%85%88%E5%AE%89%E8%A3%85Node-js-%E5%92%8C-Git-%E5%BA%94%E7%94%A8%E3%80%82%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F%E5%AE%89%E8%A3%85%E8%BF%99%E4%B8%A4%E4%B8%AA%E8%BD%AF%E4%BB%B6%EF%BC%8C%E5%8F%AA%E9%9C%80%E4%BD%BF%E7%94%A8npm%E5%8D%B3%E5%8F%AF%E5%AE%8C%E6%88%90Hexo%E7%9A%84%E5%AE%89%E8%A3%85%E3%80%82"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装Hexo十分简单，需要先安装Node.js 和 Git 应用。如果已经安装这两个软件，只需使用npm即可完成Hexo的安装。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%99"><span class="nav-number">1.2.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init"><span class="nav-number">1.4.</span> <span class="nav-text">init</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%E3%80%82%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E8%AE%BE%E7%BD%AEfolder%EF%BC%8C%E9%BB%98%E8%AE%A4%E5%9C%A8%E7%9B%AE%E5%89%8D%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%BB%BA%E7%AB%8B%E7%BD%91%E7%AB%99"><span class="nav-number">1.4.1.</span> <span class="nav-text">新建一个网站。如果没有设置folder，默认在目前的文件夹建立网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#new"><span class="nav-number">1.5.</span> <span class="nav-text">new</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%AF%87%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E8%AE%BE%E7%BD%AElayout%E7%9A%84%E8%AF%9D%EF%BC%8C%E9%BB%98%E8%AE%A4%E4%BD%BF%E7%94%A8-config-yml-%E4%B8%AD%E7%9A%84default-layout-%E5%8F%82%E6%95%B0%E4%BB%A3%E6%9B%BF%E3%80%82%E5%A6%82%E6%9E%9C%E6%A0%87%E9%A2%98%E5%8C%85%E5%90%AB%E7%A9%BA%E6%A0%BC%EF%BC%8C%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%E5%BC%95%E5%8F%B7%E6%8B%AC%E8%B5%B7%E6%9D%A5%E3%80%82"><span class="nav-number">1.5.1.</span> <span class="nav-text">新建篇一篇文章，如果没有设置layout的话，默认使用__config.yml 中的default_layout 参数代替。如果标题包含空格，需要使用引号括起来。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generate"><span class="nav-number">1.6.</span> <span class="nav-text">generate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E3%80%82"><span class="nav-number">1.6.1.</span> <span class="nav-text">生成静态文件。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#public"><span class="nav-number">1.7.</span> <span class="nav-text">public</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E8%A1%A8%E8%8D%89%E7%A8%BF"><span class="nav-number">1.7.1.</span> <span class="nav-text">发表草稿</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#server"><span class="nav-number">1.8.</span> <span class="nav-text">server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E8%AE%BF%E9%97%AE%E7%BD%91%E5%9D%80%E4%BD%8D-http-localhost-4000"><span class="nav-number">1.8.1.</span> <span class="nav-text">启动服务器，默认情况下，访问网址位:http:&#x2F;&#x2F;localhost:4000&#x2F;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deploy"><span class="nav-number">1.9.</span> <span class="nav-text">deploy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99"><span class="nav-number">1.9.1.</span> <span class="nav-text">部署网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clean"><span class="nav-number">1.10.</span> <span class="nav-text">clean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">1.11.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version"><span class="nav-number">1.12.</span> <span class="nav-text">version</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hconk</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://notes.zyk.space/2016/08/29/Hexo-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hconk">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hconk's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo 使用笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-08-29 18:03:43" itemprop="dateCreated datePublished" datetime="2016-08-29T18:03:43+08:00">2016-08-29</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-10-25 18:07:39" itemprop="dateModified" datetime="2020-10-25T18:07:39+08:00">2020-10-25</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Hexo-使用笔记"><a href="#Hexo-使用笔记" class="headerlink" title="Hexo 使用笔记"></a>Hexo 使用笔记</h1><blockquote>
+<p>Hexo是一个快速，简洁且高效的博客框架。Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>该文章仅用来做简单的记录，如需具体安装可以参考<a target="_blank" rel="noopener" href="http://hexo.io/zh-cn/docs/">hexo</a> 官方文档</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
+<h3 id="安装Hexo十分简单，需要先安装Node-js-和-Git-应用。如果已经安装这两个软件，只需使用npm即可完成Hexo的安装。"><a href="#安装Hexo十分简单，需要先安装Node-js-和-Git-应用。如果已经安装这两个软件，只需使用npm即可完成Hexo的安装。" class="headerlink" title="安装Hexo十分简单，需要先安装Node.js 和 Git 应用。如果已经安装这两个软件，只需使用npm即可完成Hexo的安装。"></a>安装Hexo十分简单，需要先安装Node.js 和 Git 应用。如果已经安装这两个软件，只需使用npm即可完成Hexo的安装。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建一个网站。如果没有设置folder，默认在目前的文件夹建立网站"><a href="#新建一个网站。如果没有设置folder，默认在目前的文件夹建立网站" class="headerlink" title="新建一个网站。如果没有设置folder，默认在目前的文件夹建立网站"></a>新建一个网站。如果没有设置folder，默认在目前的文件夹建立网站</h3><h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建篇一篇文章，如果没有设置layout的话，默认使用-config-yml-中的default-layout-参数代替。如果标题包含空格，需要使用引号括起来。"><a href="#新建篇一篇文章，如果没有设置layout的话，默认使用-config-yml-中的default-layout-参数代替。如果标题包含空格，需要使用引号括起来。" class="headerlink" title="新建篇一篇文章，如果没有设置layout的话，默认使用__config.yml 中的default_layout 参数代替。如果标题包含空格，需要使用引号括起来。"></a>新建篇一篇文章，如果没有设置layout的话，默认使用__config.yml 中的default_layout 参数代替。如果标题包含空格，需要使用引号括起来。</h3><h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成静态文件。"><a href="#生成静态文件。" class="headerlink" title="生成静态文件。"></a>生成静态文件。</h3><ul>
+<li>-d, –deploy 文件生成后立即部署网站</li>
+<li>-w, –watch 监视文件变动</li>
+</ul>
+<h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo public [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="发表草稿"><a href="#发表草稿" class="headerlink" title="发表草稿"></a>发表草稿</h3><h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动服务器，默认情况下，访问网址位-http-localhost-4000"><a href="#启动服务器，默认情况下，访问网址位-http-localhost-4000" class="headerlink" title="启动服务器，默认情况下，访问网址位:http://localhost:4000/"></a>启动服务器，默认情况下，访问网址位:<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></h3><ul>
+<li>-p, –port 重设端口</li>
+<li>-s, –static 只使用静态文件</li>
+<li>-l, –log 启动日记记录，使用覆盖记录格式</li>
+</ul>
+<h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><ul>
+<li>-g, –generate 部署之前预先生成静态文件</li>
+</ul>
+<h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><p>清除缓存文件(db.json)和已生成的静态文件(public)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>列出网站资料</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo list &lt;type&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="version"><a href="#version" class="headerlink" title="version"></a>version</h2><p>显示Hexo版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo version </span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2016/06/18/Operation-System-Experiment-1/" rel="prev" title="Operation System Experiment 1">
+                  <i class="fa fa-chevron-left"></i> Operation System Experiment 1
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2016/08/29/Markdown-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" rel="next" title="Markdown 使用笔记">
+                  Markdown 使用笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hconk</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

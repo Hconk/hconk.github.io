@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"notes.zyk.space","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="很久之前遇到的问题，pip安装python包时报错如下： 1UnicodeEncodeError: ‘ascii’ codec can’t encode character u’\u258f’ in position 8: ordinal not in range(128) 后来换了easy install也就没有管他了，今天又遇到了这个问题，觉得还是要解决一下的。 123456789101112">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pip安装python包时出现编码错误">
+<meta property="og:url" content="http://notes.zyk.space/2016/06/11/pip%E5%AE%89%E8%A3%85python%E5%8C%85%E6%97%B6%E5%87%BA%E7%8E%B0%E7%BC%96%E7%A0%81%E9%94%99%E8%AF%AF/index.html">
+<meta property="og:site_name" content="Hconk&#39;s Blog">
+<meta property="og:description" content="很久之前遇到的问题，pip安装python包时报错如下： 1UnicodeEncodeError: ‘ascii’ codec can’t encode character u’\u258f’ in position 8: ordinal not in range(128) 后来换了easy install也就没有管他了，今天又遇到了这个问题，觉得还是要解决一下的。 123456789101112">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-06-11T09:54:28.000Z">
+<meta property="article:modified_time" content="2020-10-25T10:08:08.511Z">
+<meta property="article:author" content="Hconk">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://notes.zyk.space/2016/06/11/pip%E5%AE%89%E8%A3%85python%E5%8C%85%E6%97%B6%E5%87%BA%E7%8E%B0%E7%BC%96%E7%A0%81%E9%94%99%E8%AF%AF/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>pip安装python包时出现编码错误 | Hconk's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hconk's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hconk</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://notes.zyk.space/2016/06/11/pip%E5%AE%89%E8%A3%85python%E5%8C%85%E6%97%B6%E5%87%BA%E7%8E%B0%E7%BC%96%E7%A0%81%E9%94%99%E8%AF%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hconk">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hconk's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          pip安装python包时出现编码错误
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-06-11 17:54:28" itemprop="dateCreated datePublished" datetime="2016-06-11T17:54:28+08:00">2016-06-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-10-25 18:08:08" itemprop="dateModified" datetime="2020-10-25T18:08:08+08:00">2020-10-25</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>很久之前遇到的问题，pip安装python包时报错如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnicodeEncodeError: ‘ascii’ codec can’t encode character u’\u258f’ in position 8: ordinal not in range(128)</span><br></pre></td></tr></table></figure>
+<p>后来换了easy install也就没有管他了，今天又遇到了这个问题，觉得还是要解决一下的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">Exception:</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\basecommand.py&quot;, l</span><br><span class="line">ine 215, in main</span><br><span class="line">    status &#x3D; self.run(options, args)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\commands\install.p</span><br><span class="line">y&quot;, line 299, in run</span><br><span class="line">    requirement_set.prepare_files(finder)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\req\req_set.py&quot;, l</span><br><span class="line">ine 370, in prepare_files</span><br><span class="line">    ignore_dependencies&#x3D;self.ignore_dependencies))</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\req\req_set.py&quot;, l</span><br><span class="line">ine 587, in _prepare_file</span><br><span class="line">    session&#x3D;self.session, hashes&#x3D;hashes)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\download.py&quot;, line</span><br><span class="line"> 810, in unpack_url</span><br><span class="line">    hashes&#x3D;hashes</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\download.py&quot;, line</span><br><span class="line"> 649, in unpack_http_url</span><br><span class="line">    hashes)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\download.py&quot;, line</span><br><span class="line"> 871, in _download_http_url</span><br><span class="line">    _download_url(resp, link, content_file, hashes)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\download.py&quot;, line</span><br><span class="line"> 595, in _download_url</span><br><span class="line">    hashes.check_against_chunks(downloaded_chunks)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\utils\hashes.py&quot;,</span><br><span class="line">line 46, in check_against_chunks</span><br><span class="line">    for chunk in chunks:</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\download.py&quot;, line</span><br><span class="line"> 563, in written_chunks</span><br><span class="line">    for chunk in chunks:</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\utils\ui.py&quot;, line</span><br><span class="line"> 141, in iter</span><br><span class="line">    self.next(n)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\_vendor\progress\_</span><br><span class="line">_init__.py&quot;, line 73, in next</span><br><span class="line">    self.update()</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\_vendor\progress\b</span><br><span class="line">ar.py&quot;, line 79, in update</span><br><span class="line">    self.writeln(line)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\_vendor\progress\h</span><br><span class="line">elpers.py&quot;, line 68, in writeln</span><br><span class="line">    print(line, end&#x3D;&#39;&#39;, file&#x3D;self.file)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\_vendor\colorama\a</span><br><span class="line">nsitowin32.py&quot;, line 141, in write</span><br><span class="line">    self.write_and_convert(text)</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\_vendor\colorama\a</span><br><span class="line">nsitowin32.py&quot;, line 169, in write_and_convert</span><br><span class="line">    self.write_plain_text(text, cursor, len(text))</span><br><span class="line">  File &quot;c:\python27\lib\site-packages\pip-8.1.2-py2.7.egg\pip\_vendor\colorama\a</span><br><span class="line">nsitowin32.py&quot;, line 174, in write_plain_text</span><br><span class="line">    self.wrapped.write(text[start:end])</span><br><span class="line">UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode character u&#39;\u258f&#39; in position 8</span><br><span class="line">: ordinal not in range(128)</span><br></pre></td></tr></table></figure>
+
+<p>从 <a target="_blank" rel="noopener" href="http://www.v2ex.com/t/90659">此处</a> 得知原因如下</p>
+<p>pip安装python包会加载我的用户目录，我的用户目录恰好是中文的，ascii不能编码。解决办法是：<br>python目录 Python27\Lib\site-packages 建一个文件sitecustomize.py<br>内容写：</p>
+<blockquote>
+<p>import sys<br>sys.setdefaultencoding(‘gb2312’)</p>
+</blockquote>
+<p>python会自动运行这个文件。</p>
+<p>解决方案为在 Python27\Lib\site-packages下建立一个文件<strong>sitecustomize.py</strong>写入：</p>
+<blockquote>
+<p>import sys<br>sys.setdefaultencoding(‘gb2312’) #我这样修改后并不可以，修改gb2312为UTF-8后解决</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2016/06/16/MCU51-Easy-Score-Record-System/" rel="next" title="MCU51 Easy Score Record System">
+                  MCU51 Easy Score Record System <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hconk</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
